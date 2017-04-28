@@ -37,14 +37,15 @@ public class Gui {
 	
 	private void operacionesSalida()
 	{
+		if(p!=null)
 		p.destroy();
 	}
 	private JTextArea generateJFrame()
 	{
 		console=new JFrame();
 		console.setTitle("Copying Files....");
-		console.setPreferredSize(new Dimension(500,500));
-		console.setSize(new Dimension(500,500));
+		console.setPreferredSize(new Dimension(800,500));
+		console.setSize(new Dimension(800,500));
 		console.setLocationRelativeTo(null);
 		Image im = Toolkit.getDefaultToolkit().getImage("images/robofast.gif");
 		console.setIconImage(im);
