@@ -1,13 +1,16 @@
 package com.robofast.data;
 
+import com.robofast.gui.Gui;
 
 public class FicherosSeleccionados {
 	
 	private String origen;
 	private String destino;
+	private Gui gui;
 	
-	public FicherosSeleccionados(String origen,String destino)
+	public FicherosSeleccionados(String origen,String destino,Gui gui)
 	{
+		this.gui=gui;
 		if(origen.length()==3)
 		{
 			//Se ha indicado una unidad
@@ -39,7 +42,10 @@ public class FicherosSeleccionados {
 			
 			//System.out.println(comando);
 			
-			Runtime.getRuntime().exec(comando).waitFor();
+			Process p=Runtime.getRuntime().exec(comando);
+			
+			gui.showConsole(p.getInputStream(),p);
+			
 			
 		}
 		catch(Exception e)

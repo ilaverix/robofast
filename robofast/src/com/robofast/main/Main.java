@@ -6,7 +6,7 @@ public class Main {
 	public static void main(String[] args)
 	{
 		new Gui();
-		System.exit(0);
+		//System.exit(0);
 	}
 
 }
